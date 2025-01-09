@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        header {
+            background-color: #4CAF50; /* Green theme */
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333; /* Dark background for the navigation */
+            padding: 0.5rem;
+        }
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #f0f0f0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #4CAF50; /* Green hover effect */
+        }
+        .banner {
+            background: url('Images/Main.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+        .banner h2 {
+            margin-bottom: 20px;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #555;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            background-color: #333;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            outline: none; /* Removes default outline */
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .card:focus-visible {
+            outline: 2px solid #4CAF50; /* Green outline for focused cards */
+            outline-offset: 4px;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 0.5rem 0;
+            color: #f0f0f0;
+        }
+        .card p {
+            padding: 0 1rem;
+            color: #ccc;
+        }
+        footer {
+            text-align: center;
+            background: #4CAF50; /* Green footer */
+            color: white;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .footer-left {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Travel Explorer</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="banner">
+        <h2>Discover Your Next Adventure</h2>
+    </div>
+    <div class="content">
+        <div class="section">
+            <h2>Explore Categories</h2>
+            <div class="grid">
+                <a href="beaches.html" class="card">
+                    <img src="Images/Beach.jpg">
+                    <h3>Beaches</h3>
+                    <p>Relax by the serene coastlines.</p>
+                </a>
+                <a href="mountains.html" class="card">
+                    <img src="Images/Mountain.jpg">
+                    <h3>Mountains</h3>
+                    <p>Conquer majestic peaks.</p>
+                </a>
+                <a href="forests.html" class="card">
+                    <img src="Images/Forest.jpg">
+                    <h3>Forests</h3>
+                    <p>Immerse yourself in lush greenery.</p>
+                </a>
+                <a href="deserts.html" class="card">
+                    <img src="Images/Desert.jpg">
+                    <h3>Deserts</h3>
+                    <p>Discover the golden sands.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-left">
+            <p>&copy; 2024 Travel Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

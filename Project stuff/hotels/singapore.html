@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore - Travel Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e5e5e5;
+        }
+        header {
+            background-color: #4CAF50; /* Green theme */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .content {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .description {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #aaa;
+            margin-bottom: 3rem;
+        }
+        .attractions {
+            margin-bottom: 3rem;
+        }
+        .attractions h2 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .attractions ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        .attractions ul li {
+            margin-bottom: 1rem;
+            color: #bbb;
+            font-size: 1.1rem;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+        .card {
+            background-color: #1f1f1f;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            width: 100%;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .card-content h3 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .card-content p {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-content .check-availability {
+            padding: 0.8rem 1.5rem;
+            background-color: #4CAF50; /* Green theme */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .card-content .check-availability:hover {
+            background-color: #388E3C; /* Darker Green on hover */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #1f1f1f;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        .modal-content h3 {
+            font-size: 2rem;
+            color: #4CAF50; /* Green theme */
+            margin-bottom: 1rem;
+        }
+        .modal-content .images {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .modal-content .images img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .modal-content p {
+            color: #bbb;
+            margin: 1.5rem 0;
+        }
+        .modal-content strong {
+            font-size: 1.2rem;
+            color: #e5e5e5;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2.5rem;
+            color: #e5e5e5;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .book-btn {
+            padding: 1rem 2rem;
+            background-color: #4CAF50; /* Green theme */
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .book-btn:hover {
+            background-color: #388E3C; /* Darker Green on hover */
+        }
+        footer {
+            background-color: #4CAF50; /* Green theme */
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Modal Form Styling */
+        #bookingForm {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            align-items: center;
+        }
+        #bookingForm input,
+        #bookingForm select,
+        #bookingForm textarea {
+            width: 80%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+        #bookingForm button {
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        #bookingForm button:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Singapore</h1>
+    </header>
+    <div class="content">
+        <div class="description">
+            <p>Singapore is a vibrant, multicultural city-state known for its modern architecture, lush green spaces, and world-class attractions. Explore the beauty of this global city!</p>
+        </div>
+        <div class="attractions">
+            <h2>Top Attractions in Singapore</h2>
+            <ul>
+                <li>Marina Bay Sands - A futuristic resort with stunning views and attractions like the infinity pool.</li>
+                <li>Gardens by the Bay - A futuristic garden with the iconic Supertree Grove.</li>
+                <li>Sentosa Island - A resort island with beaches, theme parks, and luxury hotels.</li>
+                <li>Singapore Zoo - World-renowned zoo known for its open-concept enclosures.</li>
+                <li>Chinatown - A vibrant district with cultural heritage and delicious local food.</li>
+            </ul>
+        </div>
+        <div class="cards">
+            <!-- First Hotel Card -->
+            <div class="card">
+                <img src="images/Kerala-Taaj1.jpg" alt="Marina Bay Sands">
+                <div class="card-content">
+                    <h3>Marina Bay Sands</h3>
+                    <p>Luxury Room - 1 king-size bed</p>
+                    <p><strong>₹25,000</strong> per night (Free cancellation)</p>
+                    <button class="check-availability" onclick="showDetails(
+                        'Marina Bay Sands',
+                        '₹25,000 per night',
+                        'Marina Bay Sands is a landmark resort offering luxury rooms, a world-class casino, and breathtaking views from the infinity pool.',
+                        '<li>Infinity Pool</li><li>SkyPark</li><li>Luxury Shopping</li><li>5-Star Restaurants</li>',
+                        []
+                    )">Check Availability</button>
+                </div>
+            </div>
+
+            <!-- Second Hotel Card -->
+            <div class="card">
+                <img src="images/Kerala-Taaj2.jpg" alt="Raffles Hotel Singapore">
+                <div class="card-content">
+                    <h3>Raffles Hotel Singapore</h3>
+                    <p>Suite Room - 1 double bed</p>
+                    <p><strong>₹35,000</strong> per night (Free cancellation)</p>
+                    <button class="check-availability" onclick="showDetails(
+                        'Raffles Hotel Singapore',
+                        '₹35,000 per night',
+                        'Raffles Hotel is a luxurious colonial-style hotel, offering a rich history and impeccable service.',
+                        '<li>Colonial Architecture</li><li>Raffles Long Bar</li><li>Luxury Spa</li><li>Exclusive Suites</li>',
+                        []
+                    )">Check Availability</button>
+                </div>
+            </div>
+
+            <!-- Third Hotel Card -->
+            <div class="card">
+                <img src="images/Kerala-Taaj3.jpg" alt="The Fullerton Bay Hotel">
+                <div class="card-content">
+                    <h3>The Fullerton Bay Hotel</h3>
+                    <p>Bay View Room - 1 king-size bed</p>
+                    <p><strong>₹15,500</strong> per night (Free cancellation)</p>
+                    <button class="check-availability" onclick="showDetails(
+                        'The Fullerton Bay Hotel',
+                        '₹15,500 per night',
+                        'Located by the waterfront, The Fullerton Bay Hotel offers spectacular views and stylish rooms, ideal for luxury stays.',
+                        '<li>Waterfront Views</li><li>Outdoor Pool</li><li>5-Star Dining</li><li>Wellness Spa</li>',
+                        []
+                    )">Check Availability</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()">×</button>
+                <h3 id="hotelName">Hotel Name</h3>
+                <div class="images" id="hotelImages"></div>
+                <p id="hotelDescription">Description of the hotel.</p>
+                <strong>Features:</strong>
+                <ul id="hotelFeatures"></ul>
+                <a href="#" class="book-btn" id="bookBtn">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Singapore - Travel Explorer</p>
+    </footer>
+
+    <script>
+        // Function to show the hotel details in the modal
+        function showDetails(name, price, description, features, images) {
+            document.getElementById('hotelName').textContent = name;
+            document.getElementById('hotelDescription').textContent = description;
+            document.getElementById('hotelFeatures').innerHTML = features;
+            document.getElementById('hotelImages').innerHTML = images.map(img => `<img src="${img}" alt="${name}">`).join('');
+            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('bookBtn').addEventListener('click', () => openBookingForm(name, price));
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Function to open the booking form
+        function openBookingForm(name, price) {
+            const bookingForm = ` 
+                <form id="bookingForm">
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                    <h3>Booking for ${name}</h3>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <input type="number" name="age" placeholder="Your Age" required>
+                    <select name="gender" required>
+                        <option value="" disabled selected>Choose Your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea name="address" placeholder="Your Address" required></textarea>
+                    <input type="number" name="days" placeholder="Number of Days" required>
+                    <button type="submit">Submit Booking</button>
+                </form>
+            `;
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.innerHTML = bookingForm;
+            document.getElementById('modal').style.display = 'flex';
+
+            // Handle form submission
+            document.getElementById('bookingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const bookingDetails = {
+                    hotelName: name,
+                    price: price,
+                    customerName: formData.get('name'),
+                    customerEmail: formData.get('email'),
+                    customerPhone: formData.get('phone'),
+                    customerAge: formData.get('age'),
+                    customerGender: formData.get('gender'),
+                    customerAddress: formData.get('address'),
+                    numberOfDays: formData.get('days')
+                };
+                saveBookingToLocalStorage(bookingDetails);
+                generateDownloadableFile(bookingDetails);
+                alert('Booking submitted successfully!');
+                closeModal();
+            });
+        }
+
+        // Save booking details to local storage
+        function saveBookingToLocalStorage(details) {
+            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+            bookings.push(details);
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+        }
+
+        // Generate a downloadable booking file (JSON format)
+        function generateDownloadableFile(details) {
+            const blob = new Blob([JSON.stringify(details, null, 2)], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `booking_${details.hotelName.replace(/\s+/g, '_')}.json`;
+            link.click();
+        }
+    </script>
+</body>
+</html>

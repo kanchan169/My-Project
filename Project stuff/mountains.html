@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Mountains</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            background: url('images/Mountain1.jpg') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            margin: 1rem 0;
+            color: #4CAF50;
+        }
+
+        .tips, .precautions, .features, .activities {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        .tips h3, .precautions h3, .features h3, .activities h3 {
+            color: #4CAF50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tips ul, .precautions ul, .features ul, .activities ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tips li, .precautions li, .features li, .activities li {
+            background: #2c2c2c;
+            margin-bottom: 0.5rem;
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips li::before, .precautions li::before, .features li::before, .activities li::before {
+            content: '\2022';
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore the Majestic Mountains</h1>
+        <p>Climb Higher, Breathe Deeper, Discover Nature</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">About Mountains</h2>
+        <div class="content">
+            <p>Mountains are the epitome of natural grandeur, with towering peaks and rugged terrain offering both beauty and adventure. Whether you're looking to challenge yourself with a strenuous hike or enjoy the serene beauty from a mountaintop view, mountains offer a unique and awe-inspiring experience.</p>
+            <p>Mountain ranges are spread across continents, each with its unique topography, flora, and fauna. They provide the perfect backdrop for outdoor activities, from skiing to rock climbing, and are a sanctuary for those seeking to escape into nature.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Mountain Features</h2>
+        <div class="features">
+            <h3>Key Features of Mountains</h3>
+            <ul>
+                <li>Snow-capped peaks that change with the seasons.</li>
+                <li>Rocky ridges and cliffs offering dramatic landscapes.</li>
+                <li>High-altitude terrain with rare alpine flora and fauna.</li>
+                <li>Scenic valleys and lakes formed by ancient glaciers.</li>
+            </ul>
+            <img src="Images/Mountain2.jpg" alt="Mountain view" style="width:100%; border-radius:8px;">
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Types of Mountains</h2>
+        <div class="content">
+            <p>Mountains come in various forms, each formed through different geological processes. Here are the most common types:</p>
+            <ul>
+                <li><strong>Volcanic Mountains:</strong> Created by volcanic activity, these mountains are formed when magma erupts from the Earth's crust and cools.</li>
+                <li><strong>Fold Mountains:</strong> Formed by the collision of tectonic plates, causing the Earth's crust to fold and create high peaks.</li>
+                <li><strong>Block Mountains:</strong> Created by fault lines that cause blocks of the Earth's crust to uplift or drop.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Activities on the Mountain</h2>
+        <div class="activities">
+            <h3>Popular Mountain Activities</h3>
+            <ul>
+                <li><strong>Hiking and Trekking:</strong> Explore various trails, ranging from beginner paths to challenging summit routes.</li>
+                <li><strong>Climbing:</strong> From rock climbing to ice climbing, mountains offer a challenge for all levels.</li>
+                <li><strong>Skiing and Snowboarding:</strong> In colder climates, winter sports are among the most popular mountain activities.</li>
+                <li><strong>Wildlife Watching:</strong> Many mountains are home to diverse wildlife, offering opportunities for nature photography and observation.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Tips for Visiting Mountains</h2>
+        <div class="tips">
+            <h3>Helpful Tips</h3>
+            <ul>
+                <li>Always check weather conditions before heading out, especially in high-altitude areas.</li>
+                <li>Carry layered clothing to adapt to temperature changes.</li>
+                <li>Bring sufficient water and food for long hikes or climbs.</li>
+                <li>Invest in appropriate footwear for mountain trails, especially if you're trekking.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Precautions</h2>
+        <div class="precautions">
+            <h3>Stay Safe</h3>
+            <ul>
+                <li>Be aware of altitude sickness when hiking at higher elevations.</li>
+                <li>Follow trail markers and carry a map or GPS to avoid getting lost.</li>
+                <li>Do not attempt to climb without proper equipment and experience.</li>
+                <li>Be cautious of wildlife in the area, particularly in remote regions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mountain Explorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>

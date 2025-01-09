@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Forests</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            background: url('images/Forest1.jpeg') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            margin: 1rem 0;
+            color: #4CAF50;
+        }
+
+        .tips, .precautions, .features, .activities {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        .tips h3, .precautions h3, .features h3, .activities h3 {
+            color: #4CAF50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tips ul, .precautions ul, .features ul, .activities ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tips li, .precautions li, .features li, .activities li {
+            background: #2c2c2c;
+            margin-bottom: 0.5rem;
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips li::before, .precautions li::before, .features li::before, .activities li::before {
+            content: '\2022';
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover the Mystical Forests</h1>
+        <p>Explore the Heart of Nature, Feel the Serenity</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">About Forests</h2>
+        <div class="content">
+            <p>Forests are a sanctuary for both wildlife and humans alike, offering tranquil settings, abundant biodiversity, and opportunities for adventure. Whether you're seeking a peaceful walk under a canopy of trees, exploring hidden trails, or observing wildlife in their natural habitat, forests provide a unique connection to the earth.</p>
+            <p>Forests can be tropical, temperate, or boreal, each with its own unique ecosystem and seasonal beauty. From dense jungles to quiet woodlands, forests play a vital role in maintaining ecological balance and supporting wildlife.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Forest Features</h2>
+        <div class="features">
+            <h3>Key Features of Forests</h3>
+            <ul>
+                <li>Rich biodiversity with plants, trees, and wildlife in abundance.</li>
+                <li>Multi-layered ecosystems that range from the forest floor to the canopy.</li>
+                <li>Majestic trees that can live for centuries and provide shelter for many species.</li>
+                <li>Streams, rivers, and lakes that nourish the forest and wildlife.</li>
+            </ul>
+            <img src="Images/Forest2.jpeg" alt="Forest view" style="width:100%; border-radius:8px;">
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Types of Forests</h2>
+        <div class="content">
+            <p>Forests come in different types, each defined by its climate, vegetation, and location. Here are the main types of forests found around the world:</p>
+            <ul>
+                <li><strong>Tropical Rainforests:</strong> These forests are found near the equator and are home to a diverse range of plant and animal species.</li>
+                <li><strong>Temperate Forests:</strong> Found in cooler climates, temperate forests feature a mix of deciduous and coniferous trees.</li>
+                <li><strong>Boreal Forests (Taiga):</strong> The largest forest biome, located in the northern hemisphere, consisting mostly of coniferous trees like pines and spruces.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Forest Activities</h2>
+        <div class="activities">
+            <h3>Popular Forest Activities</h3>
+            <ul>
+                <li><strong>Hiking:</strong> Explore the natural beauty of forests with well-marked trails that range in difficulty.</li>
+                <li><strong>Wildlife Watching:</strong> Forests are perfect for spotting animals in their natural habitat, such as deer, birds, and even elusive predators.</li>
+                <li><strong>Camping:</strong> Set up camp in the heart of the forest for a serene and immersive nature experience.</li>
+                <li><strong>Forest Bathing:</strong> Practice mindfulness and meditation by connecting deeply with nature in a forest setting.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Tips for Visiting Forests</h2>
+        <div class="tips">
+            <h3>Helpful Tips</h3>
+            <ul>
+                <li>Wear appropriate footwear for hiking and walking on uneven ground.</li>
+                <li>Carry insect repellent, especially in tropical forests.</li>
+                <li>Bring a map or GPS device to avoid getting lost in dense forest areas.</li>
+                <li>Pack light but ensure you have enough water and snacks for your hike.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Precautions</h2>
+        <div class="precautions">
+            <h3>Stay Safe</h3>
+            <ul>
+                <li>Be aware of wildlife in the area and respect their space.</li>
+                <li>Stay on marked trails to avoid getting lost or harming the environment.</li>
+                <li>Check the weather before your trip, especially if you're planning a multi-day hike or camping.</li>
+                <li>Don't disturb the natural habitat or remove plants or animals from the forest.</li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Forest Explorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
